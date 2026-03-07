@@ -1,4 +1,4 @@
-# csc340-assignment4
+# csc340-assignment3
 Name: Isabel Barboza
 Date: 3/6/2026
 
@@ -12,9 +12,9 @@ Installation:
 3. Run the Spring Boot application
 4. The API will run on: http://localhost:8080/api/characters/ 
 
-Api Endpoints:
+Api Endpoints on echoAPI:
 
-GET api/characters/
+GET /api/characters/
 
 
 GET /api/characters/2
