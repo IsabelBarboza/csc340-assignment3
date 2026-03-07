@@ -1,4 +1,8 @@
 # csc340-assignment4
+Name: Isabel Barboza
+Date: 3/6/2026
+
+Assignment #3: CRUD API
 
 This project is a REST API built with Spring Boot that manages characters from the Dota universe.
 
@@ -10,13 +14,26 @@ Installation:
 
 Api Endpoints:
 
-GET /characters
-GET /characters/{id}
-POST /characters
-PUT /characters/{id}
-DELETE /characters/{id}
-GET /characters/category/{category}  
-GET /characters/search?name=substring
+GET api/characters/
+
+
+GET /api/characters/2
+
+
+POST /api/characters/
+
+
+PUT /api/characters/3
+
+
+DELETE /api/characters/5
+
+
+GET /api/characters/category/Support
+
+
+GET /api/characters/search?name=Mirana
+
 
 Demo Video:
 
