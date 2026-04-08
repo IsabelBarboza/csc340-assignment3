@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body >
+<body class="update-page">
+
         <nav>   
                 <a href="/characters/about">About</a>
                 <a href="/characters/all">Home</a>
@@ -16,14 +17,24 @@
 
         <section class="form">
             <h1>Update hero information: ${character.name}</h1>
+            <p>Modify the details below to update the hero's information.</p>
             
             <form id="edit-character" action="/characters/update/${character.characterId}" method="post" enctype="multipart/form-data">
+                <label for="name">Name <span class="required">*</span></label>
                 <input type="text" id="name" name="name" value="${character.name}" placeholder="Name"><br><br>
+                
+                <label for="universe">Universe:</label>
                 <input type="text" id="universe" name="universe" value="${character.universe}" placeholder="Universe"><br><br>
+                
+                <label for="role">Role <span class="required">*</span></label>
                 <input type="text" id="role" name="role" value="${character.role}" placeholder="Role"><br><br>
+                
+                <label for="abilities">Abilities:</label>
                 <input type="text" id="abilities" name="abilities" value="${character.abilities}" placeholder="Abilities"><br><br>
 
-                <textarea name="description" placeholder="Description">${character.description}</textarea><br><br>
+                <label for="description">Description:</label>
+                <textarea name="description" id="description" placeholder="Description">${character.description}</textarea><br><br>
+                
                 <label for="picture" class="form-label"> Picture:</label>
                 <input type="file" id="picture" name="picture" />
                 <br><br>

@@ -54,14 +54,23 @@ public class CharacterUIController {
 
     @GetMapping("/search")
     public String searchCharactersByName(@RequestParam String name, Model model) {
-        model.addAttribute("characterList", characterService.searchCharactersByName(name));
+        List<Character> results = characterService.searchCharactersByName(name);
+        if (results.isEmpty()) {
+            model.addAttribute("errorMessage", "No heroes found with name: " + name);
+        }
+        model.addAttribute("characterList", results);
         model.addAttribute("title", "Search Results for: " + name);
+
         return "character-list";
     }
 
     @GetMapping("/search/role")
     public String searchCharactersByRole(@RequestParam String role, Model model) {
-        model.addAttribute("characterList", characterService.getCharactersByRole(role));
+        List<Character> results = characterService.getCharactersByRole(role);
+        if (results.isEmpty()) {
+            model.addAttribute("errorMessage", "No heroes found with role: " + role);
+        }
+        model.addAttribute("characterList", results);
         model.addAttribute("title", "Heroes with Role: " + role);
         return "character-list";
     }
@@ -77,7 +86,6 @@ public class CharacterUIController {
         } else {
             return "redirect:/characters/add?error=true";
         }
-
     }
 
     @GetMapping("/update/{characterId}")

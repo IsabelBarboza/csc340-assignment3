@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body>
+<body class="list-page">
         <nav>
                 <a href="/characters/about">About</a>
                 <a href="/characters/all">Home</a>
@@ -34,11 +34,17 @@
                 <input type="text" id="search-role" name="role" placeholder="Search by role">
                 <button type="submit">Go</button>
             </form>
-        </div>
 
+            <#if errorMessage??>
+                <p style="color:red; text-align:center; font-weight:bold;">
+                    ${errorMessage}
+                 </p>
+            </#if>
+        </div>
 
         
         <div class="row" id="charactersGrid">  
+
             <#list characterList as character>
                 <div class="card" style="width: 18rem;">
                     <img src="/image/${(character.characterPicturePath)!'1.jpg'}" class="card-img-top" alt="Character Picture">

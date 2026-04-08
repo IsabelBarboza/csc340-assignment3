@@ -16,7 +16,7 @@
         <div class="card" style="width: 50rem;">
             <div class="card-details">
             
-                <img src="/image/${(character.characterPicturePath)!'1.jpg'}" alt="${character.name}">
+                <img src="/image/${(character.characterPicturePath)!'1.jpg'}?t=${.now?long}" alt="${character.name}">
                 
                 <div class="card-body">
                     <h3>${character.name}</h3>

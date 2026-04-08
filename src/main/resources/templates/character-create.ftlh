@@ -17,15 +17,26 @@
         
         <section class="form">
             <h1>Create a new hero</h1>
+            <p>Fill in the details below to add a new hero to the collection.</p>
             
             <form id="new-character" action="/characters/add" method="post" enctype="multipart/form-data">
-        
-                <input type="text" id="name" name="name" value="${character.name}" placeholder="Name" required><br><br>
-                <input type="text" id="universe" name="universe" value="${character.universe}" placeholder="Universe"><br><br>
-                <input type="text" id="role" name="role" value="${character.role}" placeholder="Role" required><br><br>
-                <input type="text" id="abilities" name="abilities" value="${character.abilities}" placeholder="Abilities"><br><br>
-                <textarea name="description" placeholder="Description">${character.description}</textarea><br><br>
-                 <label for="picture" class="form-label"> Picture:</label>
+
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" value="${character.name}" placeholder="e.g., Anti-Mage" required><br><br>
+                
+                <label for="universe">Universe:</label>
+                <input type="text" id="universe" name="universe" value="${character.universe}" placeholder="e.g., Dota"><br><br>
+                
+                <label for="role">Role <span class="required">*</span></label>
+                <input type="text" id="role" name="role" value="${character.role}" placeholder="e.g., Carry, Support or Mid" required><br><br>
+                
+                <label for="abilities">Abilities:</label>
+                <input type="text" id="abilities" name="abilities" value="${character.abilities}" placeholder="e.g., Blink, Mana Break"><br><br>
+                
+                <label for="description">Description:</label>
+                <textarea name="description" id="description" placeholder="Type a short description of the character...">${character.description}</textarea><br><br>
+                
+                <label for="picture" class="form-label"> Picture:</label>
                 <input type="file" id="picture" name="picture" />
                <br><br>
                 
